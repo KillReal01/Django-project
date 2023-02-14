@@ -1,7 +1,33 @@
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
 thead{
 font-weight: bold;
-text-align: center;
+text-align: left;
 }
+
+thead td:nth-child(1) {
+  width: 10%;
+}
+
+thead td:nth-child(2) {
+  width: 30%;
+}
+
+thead td:nth-child(3) {
+  width: 20%;
+}
+
+thead td:nth-child(4) {
+  width: 20%;
+}
+
+thead td:nth-child(5) {
+  width: 15%;
+}
+
 
 tbody tr{
 text-align: left;
