@@ -1,0 +1,39 @@
+thead{
+font-weight: bold;
+text-align: center;
+}
+
+tbody tr{
+text-align: left;
+}
+
+th, td {
+  padding: 10px;
+}
+
+form{
+width: 500px;
+margin-top: 50px;
+}
+
+.form-error{
+color: red;
+}
+
+.form-error li{
+list-style-type: none;
+}
+
+.form-error ul{
+padding-left: 0;
+}
+
+img.photo{
+display: inline-block;
+border-radius: 50%;
+overflow: hidden;
+width: 60px;
+height: 60px;
+object-fit: cover;
+}
+

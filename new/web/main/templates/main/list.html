@@ -1,0 +1,58 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Список сотрудников
+{% endblock %}
+
+{% block content %}
+<h1>Список сотрудников</h1>
+{% if employee %}
+<table>
+    <thead>
+    <tr>
+        <td></td>
+        {% if slug == 'surname' %}
+        <td><a href="{% url 'sort' '-surname' %}">
+        {% else %}
+        <td><a href="{% url 'sort' 'surname' %}">
+        {% endif %}
+        ФИО</a></td>
+        {% if slug == 'post' %}
+        <td><a href="{% url 'sort' '-post' %}">
+        {% else %}
+        <td><a href="{% url 'sort' 'post' %}">
+        {% endif %}
+        Должность</a></td>
+        {% if slug == 'emp_date' %}
+        <td><a href="{% url 'sort' '-emp_date' %}">
+        {% else %}
+        <td><a href="{% url 'sort' 'emp_date' %}">
+        {% endif %}
+        Дата приёма на работу</a></td>
+        {% if slug == 'salary' %}
+        <td><a href="{% url 'sort' '-salary' %}">
+        {% else %}
+        <td><a href="{% url 'sort' 'salary' %}">
+        {% endif %}
+        Зарплата</a></td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in employee %}
+    <tr>
+        <td><img class="photo" src="{{ item.photo.url }}"></td>
+        <td>{{item.surname}} {{item.name}} {{item.patronymic}}</td>
+        <td>{{item.post}}</td>
+        <td>{{item.emp_date}}</td>
+        <td>{{item.salary}}$</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Нет записей</p>
+{% endif %}
+
+
+
+{% endblock %}
